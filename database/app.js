@@ -1,12 +1,20 @@
+const mysql = require('mysql')
 
-var mysql = require('mysql')
+const db = mysql.createPool({
+    host: '127.0.0.1',
+    port: 8889,
+    user: 'genius',
+    password: '1234567', 
+    database: 'Movie'
+})
 
-var con = mysql.createConnection({ host: 'localhost', user: 'genius',password: '1234567', database: 'Movie', port: 8889 })
+db.query('select 1',(err,results) =>{
+    if(err) return console.log(err.message)
+    console.log(results)
+})
 
-
-con.connect((err) => {
-    if (err) console.log('bad luck')
-    else {
-        console.log('db connected')
-    }
+const sqlStr = 'select * from Movie'
+db.query(sqlStr,(err,results) =>{
+    if(err) return console.log(err.message)
+    console.log(results)
 })
