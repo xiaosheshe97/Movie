@@ -1,0 +1,136 @@
+/*
+Baha Hmidi
+A01
+*/
+
+body {
+    margin: 8px auto;
+    background: beige;
+    width: 700px;
+}
+
+body.background {
+    background-image: url("https://wallpaperaccess.com/full/1288076.jpg");
+}
+
+header img {
+    margin-right: 10px;
+    float: left;
+    width: 11em;
+    height: 7.8em;
+}
+
+header.first {
+    background-color: rgba(201, 124, 62, 0.767);
+    padding-bottom: 1px;
+}
+
+header h1 {
+    position: relative;
+    padding-top: 15px;
+}
+
+header h2 {
+    position: relative;
+    font-style: italic;
+}
+
+header nav {
+    margin-top: 70px;
+}
+
+main article {
+    border: rgb(240, 104, 70);
+    padding-top: 20px;
+}
+
+main footer {
+    border: rgb(240, 104, 70);
+    padding-bottom: 25px
+}
+
+main footer img {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 20em;
+    height: 20em;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main footer byline {
+    margin-left: 100px;
+}
+
+footer.footer {
+    height: 300px;
+    width: 100%;
+}
+
+p.copyright {
+    line-height: 40px;
+    font-size: 0.7em;
+}
+
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+
+/* Style the links inside the navigation bar */
+
+.topnav {
+    margin-top: 5px;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+
+/* Change the color of links on hover */
+
+.topnav {
+    background-color: #ddd;
+    color: black;
+}
+
+
+/* Add a color to the active/current link */
+
+.topnav {
+    background-color: #4c6faf;
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .left-aside,
+    .right-aside2,
+    .section2 {
+        width: 25%;
+        float: left;
+    }
+    .img3 {
+        width: 100%;
+    }
+    .item1,
+    .item2,
+    .item3 {
+        width: 25%;
+        float: left;
+    }
+    .topnav,
+    header.first {
+        width: 500px;
+    }
+}
+
+.guess {
+    background-color: rgb(165, 219, 245);
+}
