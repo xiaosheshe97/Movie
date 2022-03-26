@@ -134,3 +134,7 @@ p.copyright {
 .guess {
     background-color: rgb(165, 219, 245);
 }
+
+.hide{
+    display: none;
+}

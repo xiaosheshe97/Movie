@@ -5,21 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Group assignment</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+
 </head>
 
 <body>
 
     <header class="first">
-        <img src="img/i.jpg" alt="title image" />
         <h1 class="no">Movie Website</h1>
         <h2 class="no">All movies available</h2>
     </header>
     <nav class="topnav">
-        <a href="index.html">Movies</a> |
-        <a href="index.html">Genres</a> |
+        <button id="movie">Movies</button>
+        <button id="Genres">Genres</button>
+        <button id="A">Movie's Actor</button>
+        <button id="Actors">Actors</button>
+        <button id="Year">Year</button>
+
+
+        <!-- <a href="index.html" >Movies</a> | -->
+        <!-- <a href="index.html">Genres</a> |
         <a href="index.html">Actors</a> |
         <a href="index.html">Directors</a> |
-        <a href="index.html">Year</a> |
+        <a href="index.html">Year</a> | -->
     </nav>
 
     <select id="movieGenres" name="genres">
@@ -34,12 +42,12 @@
         <table style="width: 70%;">
             <thead>
                 <tr>
-                    <th>Movie Title</th>
-                    <th>Release year</th>
-                    <th>Genres</th>
-                    <th>Actors</th>
-                    <th>Director</th>
-                    <th>Desription</th>
+                    <th id="Movietitle">Movie Title</th>
+                    <th id="year">Release year</th>
+                    <th id="genre">Genres</th>
+                    <th id="actor">Actors</th>
+                    <th id="director">Director</th>
+                    <th id="description">Description</th>
                 </tr>
             </thead>
         </table>
@@ -56,7 +64,8 @@
         </div>
 
     </footer>
-    <script type="text/javascript" src="js/app.js"></script>
+    
+    <script src="../src/index.js"></script>
 </body>
 
 </html>

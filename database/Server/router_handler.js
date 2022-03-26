@@ -25,10 +25,11 @@ exports.getMoviesNameAndGenre = (req, res) => {
 
 exports.getMoviesNameAndActor = (req, res) => {
     const sqlStr = `
-    SELECT Movie.name AS Movie_name, Actor.name AS Actor_name,
+    SELECT Movie.name AS Movie_name, Actor.name AS Actor_name
     FROM Movie
     JOIN Movie_Actor ON Movie.id = Movie_Actor.movie_id 
-    JOIN Actor ON  Movie_Actor.actor_id  = Actor.id`
+    JOIN Actor ON  Movie_Actor.actor_id  = Actor.id
+    `
     db.query(sqlStr, (err, results) => {
         if (err) return res.send({ status: 1, message: err.message })
         res.send(results)
@@ -49,25 +50,26 @@ exports.getGroup = (req, res) => {
 }
 
 exports.getView = (req, res) => {
-    
+    const sql =`DROP VIEW Movie_Dir`
+    db.query(sql, (err, results) => {
+        if (err) return res.send({ status: 1, message: "3" })
+    })
 
     const sqlStr = `
     CREATE VIEW Movie_Dir AS
-    SELECT Movie.name, Movie.id
+    SELECT name, year
     FROM Movie
-    WHERE Movie.id < "3"
+    WHERE Movie.year > "2015"
     `
     db.query(sqlStr, (err, results) => {
         if (err) return res.send({ status: 1, message: "1" })
     })
+
     const sql2 = ` Select * From Movie_Dir
     `
     db.query(sql2, (err, results) => {
         if (err) return res.send({ status: 1, message: err.message })
         res.send(results)
     })
-    const sql =`DROP VIEW Movie_Dir`
-    db.query(sql, (err, results) => {
-        if (err) return res.send({ status: 1, message: "3" })
-    })
+   
 }
