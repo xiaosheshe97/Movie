@@ -138,3 +138,7 @@ p.copyright {
 .hide{
     display: none;
 }
+
+.line{
+    margin-top: 20px;
+}
