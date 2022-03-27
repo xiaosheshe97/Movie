@@ -148,8 +148,10 @@ $(function () {
                     }else{
                         var line = document.getElementById(''+movie)
                         var director = line.childNodes[1]
+                        console.log(director)
+                        console.log(line.childNodes[1])
     
-                        director.innerHTML +=  ", " + res[i].Director_naem
+                        director.innerHTML +=  ", " + res[i].Director_name
                     }
             }
             }
