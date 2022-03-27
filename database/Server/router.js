@@ -6,6 +6,8 @@ const router_handler = require('./router_handler')
 router.get('/Movies',router_handler.getAllMovies)
 router.get('/Moviegen',router_handler.getMoviesNameAndGenre)
 router.get('/MovieActor',router_handler.getMoviesNameAndActor)
+router.get('/MovieDirector',router_handler.getMoviesNameAndDirector)
+
 router.get('/MovieGroup',router_handler.getGroup)
 router.get('/MovieView',router_handler.getView)
 

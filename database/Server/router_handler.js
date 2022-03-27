@@ -35,7 +35,18 @@ exports.getMoviesNameAndActor = (req, res) => {
         res.send(results)
     })
 }
-
+exports.getMoviesNameAndDirector = (req, res)=>{
+    const sqlStr = `
+    SELECT Movie.name AS Movie_name, Director.name AS Director_name
+    FROM Movie
+    JOIN Movie_Director ON Movie.id = Movie_Director.movie_id 
+    JOIN Director ON  Movie_Director.director_id  = Director.id
+    `
+    db.query(sqlStr, (err, results) => {
+        if (err) return res.send({ status: 1, message: err.message })
+        res.send(results)
+    })
+}
 exports.getGroup = (req, res) => {
     const sqlStr = `
     SELECT Actor.name AS Actor_name, COUNT(Actor.id) AS Movie_Amount
