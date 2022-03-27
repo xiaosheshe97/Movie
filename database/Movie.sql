@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Feb 24, 2022 at 02:45 PM
+-- Generation Time: Mar 27, 2022 at 01:27 PM
 -- Server version: 5.7.34
 -- PHP Version: 7.4.21
 
@@ -71,7 +71,9 @@ INSERT INTO `Director` (`id`, `name`) VALUES
 (3, 'Kevin Feige'),
 (4, 'Joss Whedon'),
 (5, 'Alan Taylor'),
-(6, 'James Gunn');
+(6, 'James Gunn'),
+(7, 'Anthony Russo'),
+(8, 'Joe Russo');
 
 -- --------------------------------------------------------
 
@@ -146,7 +148,26 @@ INSERT INTO `Movie_Actor` (`movie_id`, `actor_id`) VALUES
 (5, 4),
 (5, 5),
 (5, 6),
-(5, 7);
+(5, 7),
+(1, 1),
+(1, 1),
+(8, 1),
+(8, 2),
+(8, 7),
+(2, 4),
+(2, 10),
+(6, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `movie_dir`
+-- (See below for the actual view)
+--
+CREATE TABLE `movie_dir` (
+`name` varchar(40)
+,`year` varchar(20)
+);
 
 -- --------------------------------------------------------
 
@@ -164,7 +185,13 @@ CREATE TABLE `Movie_Director` (
 --
 
 INSERT INTO `Movie_Director` (`movie_id`, `director_id`) VALUES
-(5, 4);
+(5, 4),
+(6, 4),
+(1, 1),
+(7, 7),
+(7, 8),
+(8, 7),
+(8, 8);
 
 -- --------------------------------------------------------
 
@@ -186,7 +213,25 @@ INSERT INTO `Movie_Genre` (`movie_id`, `genre_id`) VALUES
 (5, 4),
 (5, 5),
 (5, 2),
-(5, 3);
+(5, 3),
+(1, 1),
+(2, 5),
+(1, 5),
+(2, 3),
+(3, 1),
+(3, 5),
+(3, 2),
+(3, 3),
+(8, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `movie_dir`
+--
+DROP TABLE IF EXISTS `movie_dir`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`genius`@`%` SQL SECURITY DEFINER VIEW `movie_dir`  AS SELECT `movie`.`name` AS `name`, `movie`.`year` AS `year` FROM `movie` WHERE (`movie`.`year` > '2015') ;
 
 --
 -- Indexes for dumped tables
